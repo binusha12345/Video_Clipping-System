@@ -1,0 +1,17 @@
+{
+  "name": "clipforge-ai",
+  "version": "1.0.0",
+  "description": "ClipForge AI — AI-Powered Short-Form Video Creator",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n db,api,web -c blue,magenta,green \"npm:dev:db\" \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:db": "npm run dev:db --prefix server",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "build": "npm run build --prefix server && npm run build --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.4"
+  }
+}
